@@ -1,0 +1,42 @@
+@import url("./assets/styles/variables.css");
+@import url("./assets/styles/globals.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+}
+
+.btn {
+  padding: 0.5rem 2.5rem;
+  border-radius: 50px;
+}
+
+.btn-accent {
+  background-color: var(--pf-accent);
+  color: var(--pf-primary);
+  transition: var(--pf-transition-duration) ease-in-out;
+}
+
+.btn-accent:hover {
+  transform: scale(1.25) rotate(-5deg);
+  box-shadow: 0 0 5px var(--pf-accent);
+}
+
+@keyframes glowing {
+  0% {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.10);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+}

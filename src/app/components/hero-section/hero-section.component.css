@@ -1,0 +1,26 @@
+
+.profile-mask {
+  width: 844px;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-mask img {
+  position: absolute;
+  top: -8rem;
+  right: 5rem;
+}
+
+.glow {
+  animation: glowing 5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.name .bold {
+  font-weight: 700;
+}

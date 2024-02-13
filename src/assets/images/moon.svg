@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   aria-hidden="true"
+   class="sun-and-moon"
+   height="24"
+   viewBox="0 0 24 24"
+   width="24"
+   version="1.1"
+   id="svg27"
+   sodipodi:docname="moon.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs31" />
+  <sodipodi:namedview
+     id="namedview29"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="15.467961"
+     inkscape:cx="15.09572"
+     inkscape:cy="8.8570175"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg27" />
+  <mask
+     class="moon"
+     id="moon-mask">
+    <rect
+       fill="white"
+       height="100%"
+       width="100%"
+       x="0"
+       y="0"
+       id="rect2" />
+    <circle
+       cx="24"
+       cy="10"
+       fill="black"
+       r="6"
+       id="circle4" />
+  </mask>
+  <path
+     id="circle7"
+     mask="url(#moon-mask)"
+     style="fill:#f3eada;fill-opacity:1"
+     class="sun"
+     d="M 11.683756 6.0168235 A 6 6 0 0 0 5.999844 12 A 6 6 0 0 0 12 18.000156 A 6 6 0 0 0 17.303994 14.786772 A 6 6 0 0 1 16.987749 14.803752 A 6 6 0 0 1 10.987593 8.8035957 A 6 6 0 0 1 11.683756 6.0168235 z "
+     transform="matrix(1.8404469,0,0,1.8404469,-10.085363,-10.085363)" />
+</svg>

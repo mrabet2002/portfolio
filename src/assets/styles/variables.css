@@ -1,0 +1,19 @@
+:root {
+  --pf-primary: #F3EADA;
+  --pf-secondary-dark: #00796B;
+  --pf-secondary: #009688;
+  --pf-accent: #8E77D1;
+
+  --pf-font-family: Poppins, Inter, Roboto, sans-serif;
+  --pf-transition-duration: 0.3s;
+}
+
+:root.light {
+  --bg-color: var(--pf-primary);
+  --text-color: var(--pf-secondary);
+}
+
+:root.dark {
+  --bg-color: var(--pf-secondary-dark);
+  --text-color: var(--pf-primary);
+}

@@ -1,0 +1,27 @@
+<nav class="navbar-container">
+  <div class="navbar overflow-hidden">
+    <div class="logo">
+      <img width="100" ngSrc="{{'assets/images/logo.svg'}}" alt="logo" height="50">
+    </div>
+    <div class="menu flex items-center justify-center">
+      <ul class="menu-items">
+        <ng-container *ngFor="let item of menuItems">
+          <li class="menu-item"
+              [ngClass]="{'active':item.active}"
+              (click)="selectMenuItem(item)">
+            <a class="link">{{item.value}}</a>
+            <div class="indicator"></div>
+          </li>
+        </ng-container>
+      </ul>
+      <div class="theme-switch-container">
+        <button [style.top]="getThemeIconPosition('sun')" (click)="switchTheme()" class="theme-switch">
+          <img src="assets/images/sun.svg" alt="sun">
+        </button>
+        <button [style.top]="getThemeIconPosition('moon')" (click)="switchTheme()" class="theme-switch">
+          <img src="assets/images/moon.svg" alt="moon">
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
