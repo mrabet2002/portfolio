@@ -2,6 +2,7 @@ import { Subject } from "rxjs";
 import {Theme} from "../models/enums/Theme";
 
 export abstract class ParentService<T> {
+  // This is the observable that will be used to notify the components
   protected observable!: Subject<T>;
   public getObservable() {
     return this.observable.asObservable();

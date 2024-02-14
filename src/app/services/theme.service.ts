@@ -17,10 +17,9 @@ export class ThemeService extends ParentService<Theme> {
   }
 
   switchTheme() {
-    if (this.theme == Theme.LIGHT)
-      this.setTheme(Theme.DARK)
-    else
-      this.setTheme(Theme.LIGHT)
+    this.theme = this.theme == Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
+    localStorage.setItem("theme", this.theme);
+    this.notify(this.theme)
   }
 
   getCurrentTheme(): Theme | undefined {
