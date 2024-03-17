@@ -12,7 +12,7 @@
   height: 100%;
   padding: 0.5rem 2rem;
   margin: 0 1rem;
-  background: var(--pf-secondary);
+  background: var(--secondary-color);
   border-radius: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 

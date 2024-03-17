@@ -30,6 +30,8 @@ export class ThemeService extends ParentService<Theme> {
     let storedTheme = this.getCurrentTheme();
     if (storedTheme) {
       this.theme = storedTheme
+      console.log("Theme: ", this.theme);
+      
       this.notify(this.theme)
     }
     else {

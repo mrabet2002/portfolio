@@ -1,9 +1,16 @@
 :root {
+  /* Light mode colors */
   --pf-primary: #F3EADA;
-  --pf-secondary-dark: #002e26;
   --pf-secondary: #DECDAC;
   --pf-accent: #EE6E37;
   --pf-primary-text-color: #4A4949;
+  --pf-secondary-text-color: #4A4949;
+  /* Dark mode colors */
+  --pf-primary-dark: #121212;
+  --pf-secondary-dark: #1E1E1E;
+  --pf-accent-dark: #EE6E37;
+  --pf-primary-text-color-dark: #DECDAC;
+  --pf-secondary-text-color-dark: #9F9481;
 
   --pf-font-family: Poppins, Inter, Roboto, sans-serif;
   --pf-transition-duration: 0.3s;
@@ -22,15 +29,17 @@
   --text-color: var(--pf-primary-text-color);
   --accent-color: var(--pf-accent);
   --primary-color: var(--pf-primary);
+  --secondary-color: var(--pf-secondary);
   --card-bg-color: var(--pf-secondary);
   --link-color: var(--pf-accent)
 }
 
 :root.dark {
-  --bg-color: var(--pf-secondary-dark);
-  --text-color: var(--pf-primary);
-  --accent-color: var(--pf-accent);
-  --primary-color: var(--pf-primary);
-  --card-bg-color: var(--pf-secondary);
-  --link-color: var(--pf-accent)
+  --bg-color: var(--pf-primary-dark);
+  --text-color: var(--pf-primary-text-color-dark);
+  --accent-color: var(--pf-accent-dark);
+  --primary-color: var(--pf-primary-dark);
+  --secondary-color: var(--pf-secondary-dark);
+  --card-bg-color: var(--pf-secondary-dark);
+  --link-color: var(--pf-accent-dark)
 }

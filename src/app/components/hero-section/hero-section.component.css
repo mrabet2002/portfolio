@@ -23,5 +23,5 @@
 
 .name .bold {
   font-weight: 700;
-  color: var(--pf-accent);
+  color: var(--accent-color);
 }

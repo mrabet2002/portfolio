@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ThemeService} from "../../services/theme.service";
 import {Theme} from "../../models/enums/Theme";
-import {Subscription} from "rxjs";
+import {Subscription, startWith} from "rxjs";
 
 export interface MenuItem {
   value: string;
@@ -21,23 +21,36 @@ const MenuItems: MenuItem[] = [
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   menuItems: MenuItem[] = MenuItems;
-  theme!: Theme;
+  theme: Theme = Theme.LIGHT;
 
   indicatorPosition = '0';
   themeSubscription: Subscription;
+  logo = "assets/images/logo.png";
 
   constructor(private themeService: ThemeService) {
-    this.themeSubscription = this.themeService.getObservable().subscribe(
+    this.themeSubscription = this.themeService.getObservable().pipe(
+      startWith(themeService.theme)
+    ).subscribe(
       theme => {
+        console.log(document.documentElement.classList);
+        
         document.documentElement.classList.replace(this.theme, theme)
         this.theme = theme
+        this.switchLogo(theme)
       }
     );
   }
 
   ngOnInit() {
-    this.theme = this.themeService.theme;
-    document.documentElement.classList.replace(this.theme, this.themeService.theme)
+    // document.documentElement.classList.replace(this.theme, this.themeService.theme)
+  }
+
+  switchLogo(theme: Theme) {
+    if (theme == Theme.DARK) {
+      this.logo = "assets/images/logo-dark.png";
+    } else {
+      this.logo = "assets/images/logo.png";
+    }
   }
 
   selectMenuItem(menuItem: MenuItem) {

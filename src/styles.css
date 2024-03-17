@@ -28,20 +28,20 @@ body {
   left: -10%;
 
   opacity: 0;
-  background: var(--primary-color);
-  box-shadow: 0 0 13px 3px var(--primary-color);
+  background: var(--pf-primary);
+  box-shadow: 0 0 13px 3px var(--pf-primary);
   transform: rotate(20deg);
 }
 
 .btn-accent {
-  background-color: var(--pf-accent);
+  background-color: var(--accent-color);
   color: var(--pf-primary);
   transition: var(--pf-transition-duration) ease-in-out;
 }
 
 .btn-accent:hover {
   /* transform: scale(1.25) rotate(-5deg); */
-  box-shadow: 0 0 5px var(--pf-accent);
+  box-shadow: 0 0 5px var(--accent-color);
 }
 
 
@@ -92,7 +92,7 @@ body {
 .input-container {
   position: relative;
   border-radius: var(--pf-border-radius-lg);
-  background-color: var(--pf-primary);
+  background-color: var(--primary-color);
   padding: 0.7rem 2rem;
   margin: 1rem 0;
   transition: var(--pf-transition-duration) ease-in-out;
