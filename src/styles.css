@@ -13,6 +13,24 @@ body {
 .btn {
   padding: 0.5rem 2.5rem;
   border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--pf-transition-duration) ease-in-out;
+}
+
+.btn:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 100px;
+  position: absolute;
+  top: -20%;
+  left: -10%;
+
+  opacity: 0;
+  background: var(--primary-color);
+  box-shadow: 0 0 13px 3px var(--primary-color);
+  transform: rotate(20deg);
 }
 
 .btn-accent {
@@ -22,9 +40,33 @@ body {
 }
 
 .btn-accent:hover {
-  transform: scale(1.25) rotate(-5deg);
+  /* transform: scale(1.25) rotate(-5deg); */
   box-shadow: 0 0 5px var(--pf-accent);
 }
+
+
+.btn:hover:before {
+  animation: shine var(--pf-transition-duration) forwards;
+  animation-timing-function: linear;
+}
+
+/* Shining animation */
+@keyframes shine {
+  from {
+      opacity: 0;
+      left: -10%;
+  }
+
+  50% {
+      opacity: 1;
+  }
+
+  to {
+      opacity: 1;
+      left: 80%;
+  }
+}
+
 
 @keyframes glowing {
   0% {
@@ -39,4 +81,96 @@ body {
     transform: scale(1.05);
     opacity: 0.5;
   }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.input-container {
+  position: relative;
+  border-radius: var(--pf-border-radius-lg);
+  background-color: var(--pf-primary);
+  padding: 0.7rem 2rem;
+  margin: 1rem 0;
+  transition: var(--pf-transition-duration) ease-in-out;
+  box-shadow: 0 2px 4px var(--pf-shadow);
+  display: flex;
+  align-items: center;
+}
+
+
+.input-container label {
+  position: absolute;
+  /* top: 10px; */
+  left: 2rem;
+  /* padding: 0.5rem 1rem; */
+  color: var(--pf-primary-text-color);
+  font-family: var(--pf-font-family);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: var(--pf-transition-duration-fast) ease-in-out;
+}
+
+.input-container input,
+.input-container textarea {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: var(--pf-primary-text-color);
+  font-family: var(--pf-font-family);
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.input-container input:focus,
+.input-container textarea:focus {
+  outline: none;
+}
+
+.input-container:has(textarea) {
+  display: block;
+  border-radius: var(--pf-border-radius-md);
+}
+
+.input-container:has(textarea) label {
+  top: 1rem;
+}
+
+.input-container textarea {
+  resize: none;
+  height: 200px;
+}
+
+.input-container:has(input:focus) label,
+.input-container:has(textarea:focus) label {
+  transform: translateY(-1.2rem);
+  font-size: 0.8rem;
+}
+
+.card {
+  border-radius: var(--pf-border-radius-lg);
+  background-color: var(--card-bg-color);
+  box-shadow: 0 2px 4px var(--pf-shadow);
+  transition: var(--pf-transition-duration) ease-in-out;
+  position: relative;
+}
+
+.card-title {
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.card-title .title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-color);
+  font-family: var(--pf-font-family);
+}
+
+.card-body {
+  padding: 2rem 3rem;
 }

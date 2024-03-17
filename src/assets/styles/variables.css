@@ -1,19 +1,36 @@
 :root {
   --pf-primary: #F3EADA;
-  --pf-secondary-dark: #00796B;
-  --pf-secondary: #009688;
-  --pf-accent: #8E77D1;
+  --pf-secondary-dark: #002e26;
+  --pf-secondary: #DECDAC;
+  --pf-accent: #EE6E37;
+  --pf-primary-text-color: #4A4949;
 
   --pf-font-family: Poppins, Inter, Roboto, sans-serif;
   --pf-transition-duration: 0.3s;
+  --pf-transition-duration-fast: 0.2s;
+  --pf-transition-duration-slow: 0.5s;
+  --pf-transition-duration-fastest: 0.1s;
+  --pf-shadow: rgba(0, 0, 0, 0.2);
+  --pf-border-radius-sm: 10px;
+  --pf-border-radius-md: 30px;
+  --pf-border-radius-lg: 50px;
+  --pf-border-radius-circle: 50%;
 }
 
 :root.light {
   --bg-color: var(--pf-primary);
-  --text-color: var(--pf-secondary);
+  --text-color: var(--pf-primary-text-color);
+  --accent-color: var(--pf-accent);
+  --primary-color: var(--pf-primary);
+  --card-bg-color: var(--pf-secondary);
+  --link-color: var(--pf-accent)
 }
 
 :root.dark {
   --bg-color: var(--pf-secondary-dark);
   --text-color: var(--pf-primary);
+  --accent-color: var(--pf-accent);
+  --primary-color: var(--pf-primary);
+  --card-bg-color: var(--pf-secondary);
+  --link-color: var(--pf-accent)
 }

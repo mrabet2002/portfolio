@@ -8,7 +8,7 @@
    version="1.1"
    id="svg27"
    sodipodi:docname="sun.svg"
-   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,14 +26,15 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="15.467961"
-     inkscape:cx="16.841263"
-     inkscape:cy="25.730606"
+     inkscape:cx="4.1052599"
+     inkscape:cy="15.386643"
      inkscape:window-width="1366"
-     inkscape:window-height="705"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-height="696"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg27" />
+     inkscape:current-layer="svg27"
+     inkscape:pageshadow="0" />
   <mask
      class="moon"
      id="moon-mask">
@@ -59,67 +60,67 @@
      mask="url(#moon-mask)"
      r="6"
      id="circle7"
-     style="fill:#f3eada;fill-opacity:1" />
+     style="fill:#ee6e37;fill-opacity:1" />
   <g
      class="sun-beams"
      stroke="currentColor"
      id="g25"
-     style="fill:#f3eada;fill-opacity:1">
+     style="fill:#ee6e37;fill-opacity:1">
     <line
        x1="12"
        x2="12"
        y1="1"
        y2="3"
        id="line9"
-       style="fill:#f3eada;fill-opacity:1;stroke:#f3eada;stroke-opacity:1" />
+       style="fill:#ee6e37;fill-opacity:1;stroke:#ee6e37;stroke-opacity:1" />
     <line
        x1="12"
        x2="12"
        y1="21"
        y2="23"
        id="line11"
-       style="fill:#f3eada;fill-opacity:1;stroke:#f3eada;stroke-opacity:1" />
+       style="fill:#ee6e37;fill-opacity:1;stroke:#ee6e37;stroke-opacity:1" />
     <line
        x1="4.22"
        x2="5.64"
        y1="4.22"
        y2="5.64"
        id="line13"
-       style="fill:#f3eada;fill-opacity:1;stroke:#f3eada;stroke-opacity:1" />
+       style="fill:#ee6e37;fill-opacity:1;stroke:#ee6e37;stroke-opacity:1" />
     <line
        x1="18.36"
        x2="19.78"
        y1="18.36"
        y2="19.78"
        id="line15"
-       style="fill:#f3eada;fill-opacity:1;stroke:#f3eada;stroke-opacity:1" />
+       style="fill:#ee6e37;fill-opacity:1;stroke:#ee6e37;stroke-opacity:1" />
     <line
        x1="1"
        x2="3"
        y1="12"
        y2="12"
        id="line17"
-       style="fill:#f3eada;fill-opacity:1;stroke:#f3eada;stroke-opacity:1" />
+       style="fill:#ee6e37;fill-opacity:1;stroke:#ee6e37;stroke-opacity:1" />
     <line
        x1="21"
        x2="23"
        y1="12"
        y2="12"
        id="line19"
-       style="fill:#f3eada;fill-opacity:1;stroke:#f3eada;stroke-opacity:1" />
+       style="fill:#ee6e37;fill-opacity:1;stroke:#ee6e37;stroke-opacity:1" />
     <line
        x1="4.22"
        x2="5.64"
        y1="19.78"
        y2="18.36"
        id="line21"
-       style="fill:#f3eada;fill-opacity:1;stroke:#f3eada;stroke-opacity:1" />
+       style="fill:#ee6e37;fill-opacity:1;stroke:#ee6e37;stroke-opacity:1" />
     <line
        x1="18.36"
        x2="19.78"
        y1="5.64"
        y2="4.22"
        id="line23"
-       style="fill:#f3eada;fill-opacity:1;stroke:#f3eada;stroke-opacity:1" />
+       style="fill:#ee6e37;fill-opacity:1;stroke:#ee6e37;stroke-opacity:1" />
   </g>
 </svg>

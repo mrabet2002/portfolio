@@ -1,0 +1,37 @@
+.card {
+    position: relative;
+    bottom: -50px;
+    padding-bottom: 50px;
+}
+
+.card-body {
+    padding: 2rem 8rem;
+}
+
+.container {
+    overflow: hidden;
+    padding: 0 6rem;
+}
+
+.btn {
+    padding: 0.5rem 4rem;
+    box-shadow: 0 2px 4px var(--pf-shadow);
+}
+
+.card-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-title .title {
+    position: absolute;
+    top: -50px;
+    width: fit-content;
+    padding: 2rem 4rem;
+    background-color: var(--card-bg-color);
+    border-radius: var(--pf-border-radius-lg);
+    box-shadow: 0 2px 4px var(--pf-shadow);
+}

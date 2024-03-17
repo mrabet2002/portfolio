@@ -2,3 +2,8 @@
   font-family: var(--pf-font-family);
   color: var(--text-color);
 }
+
+
+a {
+  color: var(--link-color);
+}
