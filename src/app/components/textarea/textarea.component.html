@@ -1,0 +1,15 @@
+<!-- Make as the input component but for textarea -->
+<div class="input-container" [ngClass]="{'input-invalid': isInputInvalid(textarea)}">
+  <label [for]="id">
+    {{label}}
+    {{hasRequiredValidator()?'*':''}}
+  </label>
+  <div class="relative">
+    <textarea [id]="id" [placeholder]="placeholder" (blur)="onTouched()"
+      [(ngModel)]="value" #textarea="ngModel" [disabled]="disabled" [required]="required"></textarea>
+    <div class="icon">
+      <ng-content select="[icon]"></ng-content>
+    </div>
+  </div>
+  <span class="error" *ngIf="isInputInvalid(textarea)">
+  </span>

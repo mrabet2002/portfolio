@@ -6,12 +6,13 @@ import {Subscription, startWith} from "rxjs";
 export interface MenuItem {
   value: string;
   active: boolean;
+  link: string;
 }
 
 const MenuItems: MenuItem[] = [
-  {value: "About", active: true},
-  {value: "Projects", active: false},
-  {value: "Contact", active: false},
+  {value: "About", active: true, link: "about"},
+  {value: "Projects", active: false, link: "projects"},
+  {value: "Contact", active: false, link: "contact"},
 ]
 
 @Component({
@@ -19,7 +20,7 @@ const MenuItems: MenuItem[] = [
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit, OnDestroy {
+export class NavbarComponent implements OnDestroy {
   menuItems: MenuItem[] = MenuItems;
   theme: Theme = Theme.LIGHT;
 
@@ -40,9 +41,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
       }
     );
   }
-
-  ngOnInit() {
-    // document.documentElement.classList.replace(this.theme, this.themeService.theme)
+  
+  scrollToElement(anchorId: string) {
+    document.getElementById(anchorId)?.scrollIntoView({ behavior: 'smooth' });
   }
 
   switchLogo(theme: Theme) {

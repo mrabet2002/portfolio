@@ -11,8 +11,11 @@ body {
 }
 
 .btn {
+  display: inline-block;
+  text-align: center;
   padding: 0.5rem 2.5rem;
   border-radius: 50px;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: var(--pf-transition-duration) ease-in-out;

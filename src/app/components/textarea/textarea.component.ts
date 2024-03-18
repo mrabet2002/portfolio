@@ -1,21 +1,12 @@
-import { Component, Input, OnInit, ViewChild, forwardRef } from '@angular/core';
-import { FormControl, ValidationErrors, NG_VALUE_ACCESSOR, ControlValueAccessor, Validators, NgModel } from '@angular/forms';
+import { Component, Input, ViewChild } from '@angular/core';
+import { NgModel, ValidationErrors } from '@angular/forms';
 
 @Component({
-  selector: 'app-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
-      multi: true,
-    }
-  ]
+  selector: 'app-textarea',
+  templateUrl: './textarea.component.html',
+  styleUrls: ['./textarea.component.css']
 })
-export class InputComponent implements OnInit, ControlValueAccessor {
-  @Input() name: any;
-  @Input() type: any;
+export class TextareaComponent {
   @Input() placeholder: string = '';
   @Input() id: string = '';
   @Input() customErrors!: any;
@@ -25,7 +16,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() label: string = '';
   
 
-  @ViewChild('input') inputModel!: NgModel;
+  @ViewChild('textarea') inputModel!: NgModel;
 
   constructor() { }
 

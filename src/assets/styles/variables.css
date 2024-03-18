@@ -11,6 +11,8 @@
   --pf-accent-dark: #EE6E37;
   --pf-primary-text-color-dark: #DECDAC;
   --pf-secondary-text-color-dark: #9F9481;
+  /* Shared colors */
+  --pf-error-color: #ee3434;
 
   --pf-font-family: Poppins, Inter, Roboto, sans-serif;
   --pf-transition-duration: 0.3s;

@@ -3,11 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import {NgOptimizedImage} from "@angular/common";
+import { NgOptimizedImage } from "@angular/common";
 import { HeroSectionComponent } from './components/hero-section/hero-section.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { InputComponent } from './components/input/input.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { TextareaComponent } from './components/textarea/textarea.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +18,19 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     HeroSectionComponent,
     ContactComponent,
-    InputComponent
+    InputComponent,
+    TextareaComponent
   ],
-    imports: [
-        BrowserModule,
-        NgOptimizedImage,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    NgOptimizedImage,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([], {
+      anchorScrolling: 'enabled',
+    })
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

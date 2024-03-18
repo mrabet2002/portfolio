@@ -35,3 +35,17 @@
     border-radius: var(--pf-border-radius-lg);
     box-shadow: 0 2px 4px var(--pf-shadow);
 }
+
+.social-media-icons {
+    position: absolute;
+    width: fit-content;
+    left: -80px;
+    top: 60px;
+    background: var(--card-bg-color);
+    padding: 1rem 0.5rem;
+    border-radius: var(--pf-border-radius-lg);
+}
+
+.social-media-icons img {
+    width: 45px;
+}

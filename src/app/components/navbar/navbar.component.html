@@ -9,7 +9,7 @@
           <li class="menu-item"
               [ngClass]="{'active':item.active}"
               (click)="selectMenuItem(item)">
-            <a class="link">{{item.value}}</a>
+            <a class="link" (click)="scrollToElement(item.link)">{{item.value}}</a>
             <div class="indicator"></div>
           </li>
         </ng-container>

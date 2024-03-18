@@ -1,32 +1,40 @@
-<div class="container">
-    <div class="card">
-        <div class="card-title">
-            <div class="title">
-                Contact Me
-            </div>
+<div class="container" id="contact">
+    <div class="relative">
+        <div class="social-media-icons">
+            <!-- LInkedin -->
+            <a href="https://www.linkedin.com/in/ahmed-mrabet-90311a1ba/" target="_blank">
+                <img class="mb-2" src="assets/images/linkedin.svg" alt="linkedin">
+            </a>
+            <!-- Github -->
+            <a href="https://github.com/mrabet2002" target="_blank">
+                <img class="mb-2" src="assets/images/github.svg" alt="github">
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/ahmed_mr18/" target="_blank">
+                <img src="assets/images/instagram.svg" alt="instagram">
+            </a>
         </div>
-        <div class="card-body">
-            <div class="form">
-                <!-- Layout using tailwind (2 inpts in the first row for name and email then one in the scond row for subject and finaly the textarea) -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="input-container">
-                        <label for="name">Name</label>
-                        <input id="name" type="text" class="form-control">
-                    </div>
-                    <div class="input-container">
-                        <label for="email">Email</label>
-                        <input id="email" type="email" class="form-control">
-                    </div>
-                    <div class="input-container col-span-2">
-                        <label for="subject">Subject</label>
-                        <input id="subject" type="subject" class="form-control">
-                    </div>
-                    <div class="input-container col-span-2">
-                        <label for="message">Message</label>
-                        <textarea id="message" class="form-control"></textarea>
-                    </div>
-                    <div class="flex justify-center col-span-2">
-                        <button class="btn btn-accent">Send</button>
+        <div class="card">
+            <div class="card-title">
+                <div class="title">
+                    Contact Me
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form" [formGroup]="contactForm">
+                    <!-- Layout using tailwind (2 inpts in the first row for name and email then one in the scond row for subject and finaly the textarea) -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <app-input id="name" type="text" formControlName="name" label="Name"
+                            [required]="true"></app-input>
+                        <app-input id="email" type="text" formControlName="email" label="Email" [required]="true"
+                            [validationErrors]="contactForm.get('email')?.errors"></app-input>
+                        <app-input id="subject" type="text" formControlName="subject" label="Subject"
+                            class="col-span-2"></app-input>
+                        <app-textarea id="message" type="text" formControlName="message" label="Message"
+                            class="col-span-2" [required]="true"></app-textarea>
+                        <div class="flex justify-center col-span-2">
+                            <button class="btn btn-accent" (click)="onSubmit()">Send</button>
+                        </div>
                     </div>
                 </div>
             </div>

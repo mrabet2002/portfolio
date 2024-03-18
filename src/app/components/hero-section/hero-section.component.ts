@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 import { Subscription, startWith } from 'rxjs';
 import { Theme } from 'src/app/models/enums/Theme';
@@ -14,7 +15,10 @@ export class HeroSectionComponent {
 
   subscription: Subscription;
 
-  constructor(private themeService: ThemeService) {
+  constructor(
+    private themeService: ThemeService,
+    private scroller: ViewportScroller
+  ) {
     this.subscription = this.themeService.getObservable().pipe(
       startWith(themeService.theme) // Get and emit initial theme
     ).subscribe(
@@ -22,6 +26,10 @@ export class HeroSectionComponent {
         this.switchProfilePic(theme)
       }
     );
+  }
+
+  scrollToElement(anchorId: string) {
+    document.getElementById(anchorId)?.scrollIntoView({ behavior: 'smooth' });
   }
 
   ngONInit() {

@@ -3,7 +3,12 @@
   color: var(--text-color);
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 
 a {
   color: var(--link-color);
 }
+

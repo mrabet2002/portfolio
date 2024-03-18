@@ -34,28 +34,26 @@
     padding: 0.5rem 0;
 }
 
-.input-container input:focus,
 .input-container textarea:focus {
     outline: none;
 }
 
-.input-container:has(textarea) {
+.input-container {
     display: block;
     border-radius: var(--pf-border-radius-md);
 }
 
-.input-container:has(textarea) label {
+.input-container label {
     top: 1.5rem;
 }
 
-.input-container textarea {
+.input-container {
     resize: none;
     height: 200px;
 }
 
-.input-container:has(input:focus) label,
 .input-container:has(textarea:focus) label,
-.input-container:has(input:not(:placeholder-shown)) label{
+.input-container:has(textarea:not(:placeholder-shown)) label{
     transform: translateY(-1.2rem);
     font-size: 0.8rem;
 }

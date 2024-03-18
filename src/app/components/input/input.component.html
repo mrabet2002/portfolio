@@ -1,21 +1,15 @@
-<div class="input-container" [ngClass]="{'rg-input-invalid': isInputInvalid(input)}">
-    <label [for]="name" class="form-label d-flex">
-      <ng-content select="[label]"></ng-content>
-      {{hasRequiredValidator()?'*':''}}
-    </label>
-    <div class="position-relative">
-      <input
-      [type]="type"
-      class="form-control"
-      [id]="name"
-      [placeholder]="placeholder"
-      (blur)="onTouched()" 
-      [(ngModel)]="value" 
-      #input="ngModel" [disabled]="disabled" [required]="required"/>
-      <div class="icon">
-        <ng-content select="[icon]"></ng-content>
-      </div>
+<div class="input-container" [ngClass]="{'input-invalid': isInputInvalid(input)}">
+  <label [for]="id">
+    {{label}}
+    {{hasRequiredValidator()?'*':''}}
+  </label>
+  <div class="relative">
+    <input [type]="type" [id]="id" [placeholder]="placeholder" (blur)="onTouched()"
+      [(ngModel)]="value" #input="ngModel" [disabled]="disabled" [required]="required" />
+    <div class="icon">
+      <ng-content select="[icon]"></ng-content>
     </div>
-    <span class="error" *ngIf="isInputInvalid(input)">
-    </span>
   </div>
+  <span class="error" *ngIf="isInputInvalid(input)">
+  </span>
+</div>
