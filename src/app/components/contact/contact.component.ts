@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToasterComponent } from '@components/toaster/toaster.component';
 import { ContactService } from '@services/contact.service';
+import { ToasterService } from '@services/toaster.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,36 +10,39 @@ import { ContactService } from '@services/contact.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-
+  mailSentSoundEffect = new Audio();
   contactForm!: FormGroup;
+  sending: boolean = false;
 
-  constructor(private contactService: ContactService) { 
+  constructor(private contactService: ContactService, private toasterService: ToasterService) { 
     this.contactForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       subject: new FormControl(''),
       message: new FormControl('', [Validators.required])
     })
+
+    this.mailSentSoundEffect.src = "assets/sounds/sent.ogg";
+    this.mailSentSoundEffect.load();
   }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log(this.contactForm.value);
-    
-    // this.contactService.sendEmail({
-    //   name: 'John Doe', // 'John Doe' is a placeholder, replace it with 'form.value.name'
-    //   email: 'john@test.com', // 
-    //   subject: 'Contact Form Submission',
-    //   message: 'This is a test message' // 'This is a test message' is a placeholder, replace it with 'form.value.message'
-    // }).subscribe(response => {
+    this.sending = true;
+    setTimeout(() => {
+      this.sending = false;
+      this.mailSentSoundEffect.play();
+      this.contactForm.reset();
+      this.toasterService.show('Form submitted successfully!', 'success');
+    }, 1000);
+    // this.contactService.sendEmail(this.contactForm.value).subscribe(response => {
     //   console.log(response);
-    // });`
-    // let sound = new Audio();
-    // sound.src = "assets/sounds/sent.ogg";
-    // sound.load();
-    // sound.play();
+    //   this.mailSentSoundEffect.play();
+    //   this.sending = false;
+    //   this.contactForm.reset();
+    // });
   }
 
   getControl(name: string) : FormControl{

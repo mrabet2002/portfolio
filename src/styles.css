@@ -11,7 +11,8 @@ body {
 }
 
 .btn {
-  display: inline-block;
+  display: flex;
+  width: fit-content;
   text-align: center;
   padding: 0.5rem 2.5rem;
   border-radius: 50px;
@@ -19,6 +20,22 @@ body {
   position: relative;
   overflow: hidden;
   transition: var(--pf-transition-duration) ease-in-out;
+}
+
+.btn-accent:disabled {
+  background-color: var(--pf-disabled-accent);
+  cursor: not-allowed;
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+  color: var(--pf-primary);
+  transition: var(--pf-transition-duration) ease-in-out;
+}
+
+.btn-accent:hover {
+  /* transform: scale(1.25) rotate(-5deg); */
+  box-shadow: 0 0 5px var(--accent-color);
 }
 
 .btn:before {
@@ -35,18 +52,6 @@ body {
   box-shadow: 0 0 13px 3px var(--pf-primary);
   transform: rotate(20deg);
 }
-
-.btn-accent {
-  background-color: var(--accent-color);
-  color: var(--pf-primary);
-  transition: var(--pf-transition-duration) ease-in-out;
-}
-
-.btn-accent:hover {
-  /* transform: scale(1.25) rotate(-5deg); */
-  box-shadow: 0 0 5px var(--accent-color);
-}
-
 
 .btn:hover:before {
   animation: shine var(--pf-transition-duration) forwards;
@@ -70,6 +75,24 @@ body {
   }
 }
 
+/* Shining animation */
+@keyframes shine-fade {
+  from {
+      opacity: 0;
+      left: -10%;
+  }
+
+  50% {
+      opacity: 1;
+  }
+
+  to {
+      opacity: 0;
+      left: 100%;
+  }
+}
+
+
 
 @keyframes glowing {
   0% {
@@ -86,11 +109,10 @@ body {
   }
 }
 
-.container {
-  max-width: 1200px;
+/* .container {
   margin: 0 auto;
   padding: 0 1rem;
-}
+} */
 
 .input-container {
   position: relative;

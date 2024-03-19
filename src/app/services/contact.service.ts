@@ -10,6 +10,6 @@ export class ContactService {
   constructor(private http: HttpClient) { }
 
   sendEmail(email: Email) {
-    return this.http.post('send_email.php', email);
+    return this.http.post('http://localhost:3000/send-mail', email);
   }
 }

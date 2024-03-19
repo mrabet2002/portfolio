@@ -1,3 +1,4 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 import { Subscription, startWith } from 'rxjs';
@@ -24,6 +25,7 @@ export class HeroSectionComponent {
     ).subscribe(
       theme => {
         this.switchProfilePic(theme)
+        this.theme = theme;
       }
     );
   }

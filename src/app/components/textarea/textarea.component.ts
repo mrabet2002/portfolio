@@ -1,12 +1,19 @@
-import { Component, Input, ViewChild } from '@angular/core';
-import { NgModel, ValidationErrors } from '@angular/forms';
+import { Component, Input, ViewChild, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgModel, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-textarea',
   templateUrl: './textarea.component.html',
-  styleUrls: ['./textarea.component.css']
+  styleUrls: ['./textarea.component.css'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TextareaComponent),
+      multi: true,
+    }
+  ]
 })
-export class TextareaComponent {
+export class TextareaComponent implements ControlValueAccessor {
   @Input() placeholder: string = '';
   @Input() id: string = '';
   @Input() customErrors!: any;

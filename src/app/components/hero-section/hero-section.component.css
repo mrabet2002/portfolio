@@ -1,15 +1,12 @@
 
 .profile-mask {
-  width: 844px;
-  height: 100%;
-  position: relative;
-  z-index: 2;
-}
-
-.profile-mask img {
+  width: 800px;
   position: absolute;
-  top: -8rem;
-  right: 5rem;
+  top: -7rem;
+  right: -2rem;
+  z-index: 2;
+  mask: url(/assets/images/@4xprofile.webp) center/contain no-repeat;
+  -webkit-mask: url(/assets/images/@4xprofile.webp) center/contain no-repeat;
 }
 
 .glow {
@@ -24,4 +21,28 @@
 .name .bold {
   font-weight: 700;
   color: var(--accent-color);
+}
+
+.profile-mask:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  background: var(--pf-primary);
+  box-shadow: 0 0 60px 10px var(--pf-primary);
+  transform: rotate(20deg);
+  z-index: 100;
+}
+
+.profile-mask.dark::before {
+  animation: shine-fade var(--pf-transition-duration-slow) linear;
+}
+
+.profile-mask.dark {
+  animation: rotate3d 5s linear;
 }

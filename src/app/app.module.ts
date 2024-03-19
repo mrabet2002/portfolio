@@ -11,6 +11,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { TextareaComponent } from './components/textarea/textarea.component';
+import { ToasterComponent } from './components/toaster/toaster.component';
+import { ToasterService } from '@services/toaster.service';
+import { SocialMediaComponent } from './components/contact/social-media/social-media.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { TextareaComponent } from './components/textarea/textarea.component';
     HeroSectionComponent,
     ContactComponent,
     InputComponent,
-    TextareaComponent
+    TextareaComponent,
+    ToasterComponent,
+    SocialMediaComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,8 @@ import { TextareaComponent } from './components/textarea/textarea.component';
       anchorScrolling: 'enabled',
     })
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

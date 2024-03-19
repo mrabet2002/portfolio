@@ -1,39 +1,41 @@
-<div class="container" id="contact">
-    <div class="relative">
-        <div class="social-media-icons">
-            <!-- LInkedin -->
-            <a href="https://www.linkedin.com/in/ahmed-mrabet-90311a1ba/" target="_blank">
-                <img class="mb-2" src="assets/images/linkedin.svg" alt="linkedin">
-            </a>
-            <!-- Github -->
-            <a href="https://github.com/mrabet2002" target="_blank">
-                <img class="mb-2" src="assets/images/github.svg" alt="github">
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/ahmed_mr18/" target="_blank">
-                <img src="assets/images/instagram.svg" alt="instagram">
-            </a>
+<div class="md:container mx-auto lg:px-32 md:px-24 px-5 overflow-y-hidden" id="contact">
+    <div class="gird grid-cols-6 gap-2">
+        <div class="social-container md:visible invisible  relative">
+            <app-social-media direction="column"></app-social-media>
         </div>
-        <div class="card">
+
+        <div class="card col-span-4">
             <div class="card-title">
                 <div class="title">
                     Contact Me
                 </div>
             </div>
             <div class="card-body">
+                <app-social-media direction="row" class="md:hidden"></app-social-media>
                 <div class="form" [formGroup]="contactForm">
                     <!-- Layout using tailwind (2 inpts in the first row for name and email then one in the scond row for subject and finaly the textarea) -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <app-input id="name" type="text" formControlName="name" label="Name"
+                    <div class="grid grid-cols-2 gap-2">
+                        <app-input id="name" type="text" class="md:col-span-1 col-span-2" formControlName="name" label="Name"
                             [required]="true"></app-input>
-                        <app-input id="email" type="text" formControlName="email" label="Email" [required]="true"
+                        <app-input id="email" type="text" class="md:col-span-1 col-span-2" formControlName="email" label="Email" [required]="true"
                             [validationErrors]="contactForm.get('email')?.errors"></app-input>
                         <app-input id="subject" type="text" formControlName="subject" label="Subject"
                             class="col-span-2"></app-input>
-                        <app-textarea id="message" type="text" formControlName="message" label="Message"
-                            class="col-span-2" [required]="true"></app-textarea>
+                        <app-textarea id="message" formControlName="message" label="Message" class="col-span-2"
+                            [required]="true"></app-textarea>
                         <div class="flex justify-center col-span-2">
-                            <button class="btn btn-accent" (click)="onSubmit()">Send</button>
+                            <button class="btn btn-accent relative" (click)="onSubmit()" [disabled]="sending || contactForm.invalid">
+                                <svg *ngIf="sending" class="animate-spin -ml-1 mr-3 h-5 w-5 absolute left-5"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                    </path>
+                                </svg>
+                                Send
+                            </button>
+                            
                         </div>
                     </div>
                 </div>
@@ -41,3 +43,5 @@
         </div>
     </div>
 </div>
+
+<app-toaster></app-toaster>
