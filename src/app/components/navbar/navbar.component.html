@@ -4,7 +4,7 @@
       <img width="100" [src]="logo" alt="logo" height="50">
     </div>
     <div class="menu flex items-center justify-center">
-      <ul class="menu-items">
+      <ul class="menu-items md:flex hidden">
         <ng-container *ngFor="let item of menuItems">
           <li class="menu-item"
               [ngClass]="{'active':item.active}"
@@ -22,6 +22,20 @@
           <img src="assets/images/moon.svg" alt="moon">
         </button>
       </div>
+      <button (click)="toggleMenu()" class="menu-toggle md:hidden" #menuBtn>
+        <img src="assets/images/menu-dots.svg" width="20px" alt="menu">
+      </button>
+      <div class="menu-overlay" [ngClass]="{'active':menuOpen}" #menu>
+        <ul class="menu-items">
+          <ng-container *ngFor="let item of menuItems">
+            <li class="menu-item"
+                [ngClass]="{'active':item.active}"
+                (click)="selectMenuItem(item)" (click)="scrollToElement(item.link); toggleMenu();">
+              <a class="link">{{item.value}}</a>
+            </li>
+          </ng-container>
+        </ul>
+        </div>
     </div>
   </div>
 </nav>

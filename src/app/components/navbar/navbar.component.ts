@@ -1,7 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ThemeService} from "../../services/theme.service";
-import {Theme} from "../../models/enums/Theme";
-import {Subscription, startWith} from "rxjs";
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ThemeService } from "../../services/theme.service";
+import { Theme } from "../../models/enums/Theme";
+import { Subscription, startWith } from "rxjs";
 
 export interface MenuItem {
   value: string;
@@ -10,9 +10,9 @@ export interface MenuItem {
 }
 
 const MenuItems: MenuItem[] = [
-  {value: "About", active: true, link: "about"},
-  {value: "Projects", active: false, link: "projects"},
-  {value: "Contact", active: false, link: "contact"},
+  { value: "About", active: true, link: "about" },
+  { value: "Projects", active: false, link: "projects" },
+  { value: "Contact", active: false, link: "contact" },
 ]
 
 @Component({
@@ -21,6 +21,30 @@ const MenuItems: MenuItem[] = [
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnDestroy {
+  menuOpen: boolean = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  /**
+   * Closing menu when clicking outside of it
+   */
+
+  @ViewChild("menu") menu!: ElementRef;
+  @ViewChild("menuBtn") menuBtn!: ElementRef;
+
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    // Check if the click was outside the menu
+    const clickedInside = this.menu.nativeElement.contains(event.target) || this.menuBtn.nativeElement.contains(event.target);
+    
+    if (!clickedInside) {
+      this.menuOpen = false;
+    }
+  }
+
   menuItems: MenuItem[] = MenuItems;
   theme: Theme = Theme.LIGHT;
 
@@ -34,14 +58,14 @@ export class NavbarComponent implements OnDestroy {
     ).subscribe(
       theme => {
         console.log(document.documentElement.classList);
-        
+
         document.documentElement.classList.replace(this.theme, theme)
         this.theme = theme
         this.switchLogo(theme)
       }
     );
   }
-  
+
   scrollToElement(anchorId: string) {
     document.getElementById(anchorId)?.scrollIntoView({ behavior: 'smooth' });
   }
@@ -68,7 +92,7 @@ export class NavbarComponent implements OnDestroy {
   }
 
   getThemeIconPosition(icon: "sun" | "moon"): string {
-    const showPosition = '-10px';
+    const showPosition = '-12px';
     const hidePosition = '2rem';
     if (icon == "moon")
       return this.theme == Theme.DARK ? showPosition : hidePosition;

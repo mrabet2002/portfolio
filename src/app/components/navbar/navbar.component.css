@@ -28,14 +28,14 @@
 
 .menu-items {
   list-style-type: none;
-  display: flex;
+  /* display: flex; */
   justify-content: space-around;
   align-items: center;
   padding: 0;
   margin: 0;
 }
 
-.menu-item {
+.menu .menu-item {
   margin: 0 1rem;
   cursor: pointer;
   position: relative;
@@ -83,4 +83,43 @@
 
 .theme-switch:hover {
   opacity: 0.7;
+}
+
+.menu-toggle {
+  padding: 0.5rem;
+  border-radius: var(--pf-border-radius-lg);
+  transition: var(--pf-transition-duration);
+}
+
+.menu-toggle:hover {
+  background-color: var(--primary-color);
+}
+
+.menu-overlay {
+  position: absolute;
+  top: 90px;
+  right: 45px;
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--secondary-color);
+  border-radius: var(--pf-border-radius-sm);
+  box-shadow: 0 3px 3px 2px var(--pf-shadow);
+  padding: 1rem 0;
+  z-index: 99;
+  display: none;
+}
+
+.menu-overlay .menu-item {
+  margin: 0;
+  padding: 0.5rem 3rem;
+  width: 100%;
+  text-align: center;
+}
+
+.menu-overlay.active {
+  display: block;
+}
+
+.menu-overlay .menu-item:hover {
+  background-color: var(--primary-color);
 }
