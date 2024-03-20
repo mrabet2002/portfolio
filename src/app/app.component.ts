@@ -1,8 +1,5 @@
-import {AfterViewInit, Component, OnChanges, OnDestroy, OnInit, Renderer2, SimpleChanges} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Theme} from "./models/enums/Theme";
-import {ThemeService} from "./services/theme.service";
-import {Subscription} from "rxjs";
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,15 +7,8 @@ import {Subscription} from "rxjs";
 })
 export class AppComponent implements OnDestroy, OnInit{
   title = 'portfolio';
-  theme: Theme = Theme.LIGHT;
-  themeSubscription: Subscription;
-  constructor(private themeService: ThemeService,
-              private renderer: Renderer2) {
-    this.themeSubscription = themeService.getObservable().subscribe(
-      theme => {
-        // setTimeout(theme)
-      }
-    )
+  constructor() {
+  
   }
 
   ngOnInit() {
@@ -26,11 +16,8 @@ export class AppComponent implements OnDestroy, OnInit{
   }
 
   setTheme(theme: Theme) {
-    document.documentElement.classList.replace(this.theme, theme)
-    this.theme = theme
   }
 
   ngOnDestroy() {
-    this.themeSubscription.unsubscribe()
   }
 }

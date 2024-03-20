@@ -57,8 +57,6 @@ export class NavbarComponent implements OnDestroy {
       startWith(themeService.theme)
     ).subscribe(
       theme => {
-        console.log(document.documentElement.classList);
-
         document.documentElement.classList.replace(this.theme, theme)
         this.theme = theme
         this.switchLogo(theme)

@@ -13,7 +13,7 @@ export class ErrorMessagesService {
 
   public getErrorMessage(error: ValidationErrors | null | undefined) {
     if (error) {      
-      console.log(error);
+      // console.log(error);
       
       let found = errorMessages.find((err: ErrorMessage) => err.name == Object.keys(error)[0]);
       let errorName = found!.name;

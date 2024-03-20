@@ -32,9 +32,7 @@ import { SocialMediaComponent } from './components/contact/social-media/social-m
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([], {
-      anchorScrolling: 'enabled',
-    })
+    RouterModule
   ],
   providers: [
   ],
