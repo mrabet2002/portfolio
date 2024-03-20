@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewChild, forwardRef } from '@angular/core';
 import { FormControl, ValidationErrors, NG_VALUE_ACCESSOR, ControlValueAccessor, Validators, NgModel } from '@angular/forms';
+import { ErrorMessagesService } from '@services/error-messages.service';
 
 @Component({
   selector: 'app-input',
@@ -27,7 +28,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
   @ViewChild('input') inputModel!: NgModel;
 
-  constructor() { }
+  constructor(public errorService: ErrorMessagesService) { }
 
   ngOnInit(): void {
 

@@ -4,12 +4,14 @@
     {{label}}
     {{hasRequiredValidator()?'*':''}}
   </label>
-  <div class="relative">
-    <textarea [id]="id" [placeholder]="placeholder" (blur)="onTouched()"
-      [(ngModel)]="value" #textarea="ngModel" [disabled]="disabled" [required]="required"></textarea>
+  <div class="relative w-full h-full">
+    <textarea [id]="id" [placeholder]="placeholder" (blur)="onTouched()" [(ngModel)]="value" #textarea="ngModel"
+      [disabled]="disabled" [required]="required"></textarea>
     <div class="icon">
       <ng-content select="[icon]"></ng-content>
     </div>
   </div>
   <span class="error" *ngIf="isInputInvalid(textarea)">
+    {{this.errorService.getErrorMessage(validationErrors)}}
   </span>
+</div>

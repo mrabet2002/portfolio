@@ -1,5 +1,6 @@
 import { Component, Input, ViewChild, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgModel, ValidationErrors } from '@angular/forms';
+import { ErrorMessagesService } from '@services/error-messages.service';
 
 @Component({
   selector: 'app-textarea',
@@ -25,7 +26,7 @@ export class TextareaComponent implements ControlValueAccessor {
 
   @ViewChild('textarea') inputModel!: NgModel;
 
-  constructor() { }
+  constructor(public errorService: ErrorMessagesService) { }
 
   ngOnInit(): void {
 

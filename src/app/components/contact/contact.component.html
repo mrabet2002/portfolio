@@ -11,20 +11,22 @@
                 </div>
             </div>
             <div class="card-body">
-                <app-social-media direction="row" class="md:hidden"></app-social-media>
-                <div class="form" [formGroup]="contactForm">
+                <app-social-media direction="row" class="md:hidden "></app-social-media>
+                <div class="form mt-3" [formGroup]="contactForm">
                     <!-- Layout using tailwind (2 inpts in the first row for name and email then one in the scond row for subject and finaly the textarea) -->
                     <div class="grid grid-cols-2 gap-2">
-                        <app-input id="name" type="text" class="md:col-span-1 col-span-2" formControlName="name" label="Name"
-                            [required]="true"></app-input>
-                        <app-input id="email" type="text" class="md:col-span-1 col-span-2" formControlName="email" label="Email" [required]="true"
+                        <app-input id="name" type="text" class="md:col-span-1 col-span-2" formControlName="name"
+                            label="Name" [validationErrors]="contactForm.get('name')?.errors"></app-input>
+                        <app-input id="email" type="text" class="md:col-span-1 col-span-2" formControlName="email"
+                            label="Email" [required]="true"
                             [validationErrors]="contactForm.get('email')?.errors"></app-input>
                         <app-input id="subject" type="text" formControlName="subject" label="Subject"
                             class="col-span-2"></app-input>
                         <app-textarea id="message" formControlName="message" label="Message" class="col-span-2"
-                            [required]="true"></app-textarea>
+                            [validationErrors]="contactForm.get('message')?.errors"></app-textarea>
                         <div class="flex justify-center col-span-2">
-                            <button class="btn btn-accent relative" (click)="onSubmit()" [disabled]="sending || contactForm.invalid">
+                            <button class="btn btn-accent relative" (click)="onSubmit()"
+                                [disabled]="sending || contactForm.invalid">
                                 <svg *ngIf="sending" class="animate-spin -ml-1 mr-3 h-5 w-5 absolute left-5"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
@@ -35,7 +37,7 @@
                                 </svg>
                                 Send
                             </button>
-                            
+
                         </div>
                     </div>
                 </div>

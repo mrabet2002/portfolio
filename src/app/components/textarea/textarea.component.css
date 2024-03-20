@@ -3,7 +3,7 @@
     border-radius: var(--pf-border-radius-lg);
     background-color: var(--primary-color);
     padding: 0.7rem 2rem;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
     transition: var(--pf-transition-duration) ease-in-out;
     box-shadow: 0 2px 4px var(--pf-shadow);
     display: flex;
@@ -23,15 +23,16 @@
     transition: var(--pf-transition-duration-fast) ease-in-out;
 }
 
-.input-container input,
 .input-container textarea {
     width: 100%;
+    height: 100%;
     border: none;
     background-color: transparent;
     color: var(--pf-primary-text-color);
     font-family: var(--pf-font-family);
     font-size: 1rem;
     padding: 0.5rem 0;
+    resize: none;
 }
 
 .input-container textarea:focus {
@@ -64,4 +65,13 @@
 
 .input-invalid label {
     color: var(--pf-error-color);
+}
+
+.error {
+    color: var(--pf-error-color);
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: -1.5rem;
+    left: 1.5rem;
+    transition: var(--pf-transition-duration-fast) ease-in-out;
 }

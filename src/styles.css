@@ -114,66 +114,6 @@ body {
   padding: 0 1rem;
 } */
 
-.input-container {
-  position: relative;
-  border-radius: var(--pf-border-radius-lg);
-  background-color: var(--primary-color);
-  padding: 0.7rem 2rem;
-  margin: 1rem 0;
-  transition: var(--pf-transition-duration) ease-in-out;
-  box-shadow: 0 2px 4px var(--pf-shadow);
-  display: flex;
-  align-items: center;
-}
-
-
-.input-container label {
-  position: absolute;
-  /* top: 10px; */
-  left: 2rem;
-  /* padding: 0.5rem 1rem; */
-  color: var(--pf-primary-text-color);
-  font-family: var(--pf-font-family);
-  font-size: 1rem;
-  pointer-events: none;
-  transition: var(--pf-transition-duration-fast) ease-in-out;
-}
-
-.input-container input,
-.input-container textarea {
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  color: var(--pf-primary-text-color);
-  font-family: var(--pf-font-family);
-  font-size: 1rem;
-  padding: 0.5rem 0;
-}
-
-.input-container input:focus,
-.input-container textarea:focus {
-  outline: none;
-}
-
-.input-container:has(textarea) {
-  display: block;
-  border-radius: var(--pf-border-radius-md);
-}
-
-.input-container:has(textarea) label {
-  top: 1rem;
-}
-
-.input-container textarea {
-  resize: none;
-  height: 200px;
-}
-
-.input-container:has(input:focus) label,
-.input-container:has(textarea:focus) label {
-  transform: translateY(-1.2rem);
-  font-size: 0.8rem;
-}
 
 .card {
   border-radius: var(--pf-border-radius-lg);

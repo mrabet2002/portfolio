@@ -3,13 +3,14 @@
     {{label}}
     {{hasRequiredValidator()?'*':''}}
   </label>
-  <div class="relative">
-    <input [type]="type" [id]="id" [placeholder]="placeholder" (blur)="onTouched()"
-      [(ngModel)]="value" #input="ngModel" [disabled]="disabled" [required]="required" />
+  <div class="relative w-full">
+    <input [type]="type" [id]="id" [placeholder]="placeholder" (blur)="onTouched()" [(ngModel)]="value" #input="ngModel"
+      [disabled]="disabled" [required]="required" />
     <div class="icon">
       <ng-content select="[icon]"></ng-content>
     </div>
   </div>
   <span class="error" *ngIf="isInputInvalid(input)">
+    {{this.errorService.getErrorMessage(validationErrors)}}
   </span>
 </div>
