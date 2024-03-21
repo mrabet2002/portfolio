@@ -32,17 +32,13 @@ export class ContactComponent {
   onSubmit() {
     this.sending = true;
     setTimeout(() => {
+    }, 1000);
+    this.contactService.sendEmail(this.contactForm.value).subscribe(response => {
       this.sending = false;
       this.mailSentSoundEffect.play();
       this.contactForm.reset();
-      this.toasterService.show('Form submitted successfully!', 'success');
-    }, 1000);
-    // this.contactService.sendEmail(this.contactForm.value).subscribe(response => {
-    //   console.log(response);
-    //   this.mailSentSoundEffect.play();
-    //   this.sending = false;
-    //   this.contactForm.reset();
-    // });
+      this.toasterService.show('Message sent successfully!', 'success');
+    });
   }
 
   getControl(name: string) : FormControl{

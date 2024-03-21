@@ -46,7 +46,8 @@
   animation: rotate3d 5s linear;
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 1024px) {
   .profile-mask {
     width: 500px;
     left: -3.5rem;
