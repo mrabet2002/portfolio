@@ -1,0 +1,8 @@
+<app-flat-section title="My Portfolio" id="portfolio">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <app-portfolio-item
+      *ngFor="let project of projects"
+      [project]="project"
+    ></app-portfolio-item>
+  </div>
+</app-flat-section>

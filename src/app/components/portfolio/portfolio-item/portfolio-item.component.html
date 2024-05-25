@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-img">
+    <div class="card-img-container">
+      <img class="rounded-t-lg" [src]="project.image" alt=""/>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="title">
+      {{ project.title }}
+    </div>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" [innerHTML]="project.description | truncate:100"></p>
+    <div class="flex flex-wrap items-center justify-start w-full">
+      <ng-container *ngFor="let tool of project.tools">
+        <app-chip [label]="tool" class="mr-2 mb-2" type="outlined"></app-chip>
+      </ng-container>
+    </div>
+
+    <div class="flex item-center justify-start w-full mt-3">
+      <a href="#"
+         class="btn btn-accent mr-2">
+        Read more
+        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+             viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
+      </a>
+      <a *ngIf="project.github" [href]="project.github" class="github" target="_blank">
+        <img src="assets/images/github.svg" alt="linkedin">
+      </a>
+    </div>
+  </div>
+</div>

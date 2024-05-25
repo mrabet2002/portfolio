@@ -1,0 +1,33 @@
+.card {
+  background: var(--bg-color);
+}
+
+.card:hover {
+  box-shadow: 0 2px 15px var(--pf-shadow);
+}
+
+.github {
+  mask: url(/assets/images/github.svg) center/contain;
+  -webkit-mask: url(/assets/images/github.svg) center/contain;
+  width: 2.5rem;
+}
+
+.github:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 100px;
+  position: absolute;
+  top: -20%;
+  left: -10%;
+
+  opacity: 0;
+  background: var(--pf-primary);
+  box-shadow: 0 0 13px 3px var(--pf-primary);
+  transform: rotate(20deg);
+}
+
+.github:hover:before {
+  animation: shine var(--pf-transition-duration) forwards;
+  animation-timing-function: linear;
+}

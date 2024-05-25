@@ -49,4 +49,7 @@ export class HeroSectionComponent {
     }
   }
 
+  previewResume() {
+    window.open("assets/resume.pdf", "_blank");
+  }
 }

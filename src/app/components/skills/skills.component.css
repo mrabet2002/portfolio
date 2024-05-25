@@ -1,0 +1,17 @@
+.skill-header .icon {
+  background: var(--bg-color);
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px var(--bg-color);
+}
+
+.skill-header .title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: var(--text-color);
+}

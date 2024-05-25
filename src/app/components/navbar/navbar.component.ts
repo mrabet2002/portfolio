@@ -11,7 +11,9 @@ export interface MenuItem {
 
 const MenuItems: MenuItem[] = [
   { value: "About", active: true, link: "about" },
-  { value: "Projects", active: false, link: "projects" },
+  { value: "Skills", active: false, link: "skills" },
+  { value: "Portfolio", active: false, link: "portfolio" },
+  { value: "Experience", active: false, link: "experience" },
   { value: "Contact", active: false, link: "contact" },
 ]
 
@@ -39,7 +41,7 @@ export class NavbarComponent implements OnDestroy {
   onDocumentClick(event: MouseEvent): void {
     // Check if the click was outside the menu
     const clickedInside = this.menu.nativeElement.contains(event.target) || this.menuBtn.nativeElement.contains(event.target);
-    
+
     if (!clickedInside) {
       this.menuOpen = false;
     }
