@@ -1,0 +1,9 @@
+<app-card-section title="Docs" id="docs">
+  <ng-container *ngIf="theme$ | async as theme">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <ng-container *ngFor="let item of docItems">
+        <app-doc-item [doc]="item" [theme]="theme"></app-doc-item>
+      </ng-container>
+    </div>
+  </ng-container>
+</app-card-section>

@@ -1,72 +1,59 @@
-<div class="md:container mx-auto lg:px-32 md:px-24 px-5 py-20 overflow-y-hidden h-fit" id="skills">
-  <div class="gird grid-cols-6 gap-2">
-    <div class="card col-span-4">
-      <div class="card-title card-float-title">
+<app-card-section title="Skills" id="skills">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-6">
+    <div class="skill">
+      <div class="skill-header mb-2">
+        <div class="icon mb-2">
+          <img width="64" height="64" src="assets/icons/backend-dev.png" alt="web-design--v1"/>
+        </div>
         <div class="title">
-          Skills
+          Backend Development
         </div>
       </div>
-      <div class="card-body">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-6">
-          <div class="skill">
-            <div class="skill-header mb-2">
-              <div class="icon mb-2">
-                <img width="64" height="64" src="assets/icons/backend-dev.png" alt="web-design--v1"/>
-              </div>
-              <div class="title">
-                Backend Development
-              </div>
-            </div>
-            <div class="skill-body">
-              Proficient in C, C++ (OOP), and Java, with a focus on backend development. Experienced in using the Spring
-              Boot framework for building robust backend systems.
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill-header mb-2">
-              <div class="icon mb-2">
-                <img width="64" height="64" src="assets/icons/web-design.png" alt="web-design--v1"/>
-              </div>
-              <div class="title">
-                Frontend Development
-              </div>
-            </div>
-            <div class="skill-body">
-              Skilled in HTML, CSS, JavaScript, and Bootstrap for frontend development. Familiar with the Angular framework for dynamic frontend
-              applications.
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill-header mb-2">
-              <div class="icon mb-2">
-                <img width="64" height="64" src="assets/icons/graphic-design.png" alt="web-design--v1"/>
-              </div>
-              <div class="title">
-                Design
-              </div>
-            </div>
-            <div class="skill-body">
-              Proficient in Adobe Photoshop and Inkscape for graphic design and image editing.
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill-header mb-2">
-              <div class="icon mb-2">
-                <img width="64" height="64" src="assets/icons/docker.png" alt="web-design--v1"/>
-              </div>
-              <div class="title">
-                DevOps
-              </div>
-            </div>
-            <div class="skill-body">
-              Experienced in using Docker for containerization and Git for version control. Familiar with GitHub Actions
-              for implementing CI/CD pipelines.
-            </div>
-          </div>
+      <div class="skill-body">
+        Proficient in C, C++ (OOP), and Java, with a focus on backend development. Experienced in using the Spring
+        Boot framework for building robust backend systems.
+      </div>
+    </div>
+    <div class="skill">
+      <div class="skill-header mb-2">
+        <div class="icon mb-2">
+          <img width="64" height="64" src="assets/icons/web-design.png" alt="web-design--v1"/>
         </div>
+        <div class="title">
+          Frontend Development
+        </div>
+      </div>
+      <div class="skill-body">
+        Skilled in HTML, CSS, JavaScript, and Bootstrap for frontend development. Familiar with the Angular framework for dynamic frontend
+        applications.
+      </div>
+    </div>
+    <div class="skill">
+      <div class="skill-header mb-2">
+        <div class="icon mb-2">
+          <img width="64" height="64" src="assets/icons/graphic-design.png" alt="web-design--v1"/>
+        </div>
+        <div class="title">
+          Design
+        </div>
+      </div>
+      <div class="skill-body">
+        Proficient in Adobe Photoshop and Inkscape for graphic design and image editing.
+      </div>
+    </div>
+    <div class="skill">
+      <div class="skill-header mb-2">
+        <div class="icon mb-2">
+          <img width="64" height="64" src="assets/icons/docker.png" alt="web-design--v1"/>
+        </div>
+        <div class="title">
+          DevOps
+        </div>
+      </div>
+      <div class="skill-body">
+        Experienced in using Docker for containerization and Git for version control. Familiar with GitHub Actions
+        for implementing CI/CD pipelines.
       </div>
     </div>
   </div>
-</div>
-
-<app-toaster></app-toaster>
+</app-card-section>

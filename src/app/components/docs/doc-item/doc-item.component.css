@@ -1,0 +1,20 @@
+.card {
+  background: var(--bg-color);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.card:hover {
+  box-shadow: 0 2px 15px var(--pf-shadow);
+}
+
+.card .icon {
+  background: var(--secondary-color);
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px var(--bg-color);
+}

@@ -124,6 +124,10 @@ body {
   position: relative;
 }
 
+.card-light {
+  background: var(--bg-color);
+}
+
 .card-title {
   width: 100%;
   text-align: center;

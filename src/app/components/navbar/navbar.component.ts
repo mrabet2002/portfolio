@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } fro
 import { ThemeService } from "../../services/theme.service";
 import { Theme } from "../../models/enums/Theme";
 import { Subscription, startWith } from "rxjs";
+import {NavigationEnd, Router} from "@angular/router";
 
 export interface MenuItem {
   value: string;
@@ -13,6 +14,7 @@ const MenuItems: MenuItem[] = [
   { value: "About", active: true, link: "about" },
   { value: "Skills", active: false, link: "skills" },
   { value: "Portfolio", active: false, link: "portfolio" },
+  { value: "Docs", active: false, link: "docs" },
   { value: "Experience", active: false, link: "experience" },
   { value: "Contact", active: false, link: "contact" },
 ]
@@ -22,7 +24,7 @@ const MenuItems: MenuItem[] = [
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnDestroy {
+export class NavbarComponent implements OnInit, OnDestroy {
   menuOpen: boolean = false;
 
   toggleMenu() {
@@ -54,7 +56,8 @@ export class NavbarComponent implements OnDestroy {
   themeSubscription: Subscription;
   logo = "assets/images/logo.png";
 
-  constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService,
+              private router: Router) {
     this.themeSubscription = this.themeService.getObservable().pipe(
       startWith(themeService.theme)
     ).subscribe(
@@ -64,6 +67,22 @@ export class NavbarComponent implements OnDestroy {
         this.switchLogo(theme)
       }
     );
+  }
+
+  ngOnInit() {
+    // Check if the current route contains "docs/writings"
+    this.router.events.subscribe((event: any) => {
+      if (event.routerEvent)
+        if (event.routerEvent.url.includes("docs/writings")) {
+          // Set the active menu item to "Writings"
+          this.menuItems = [{
+            value: "Home",
+            active: false,
+            link: "home"
+          }]
+        }
+        else this.menuItems = MenuItems;
+    });
   }
 
   scrollToElement(anchorId: string) {
@@ -79,8 +98,14 @@ export class NavbarComponent implements OnDestroy {
   }
 
   selectMenuItem(menuItem: MenuItem) {
+    if (menuItem.link == "home") {
+      this.router.navigate(["/"]);
+      return;
+    }
     menuItem.active = true;
     this.closeOthers(menuItem)
+    this.scrollToElement(menuItem.link);
+    this.toggleMenu();
     // const menuItemWidth = 100 / this.menuItems.length;
     // this.indicatorPosition = `${this.menuItems.indexOf(menuItem) * menuItemWidth}%`;
   }

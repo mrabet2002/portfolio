@@ -1,0 +1,14 @@
+<div class="md:container mx-auto lg:px-32 md:px-24 px-5 py-20 overflow-y-hidden h-fit" [id]="id">
+  <div class="gird grid-cols-6 gap-2">
+    <div class="card col-span-4">
+      <div class="card-title card-float-title">
+        <div class="title">
+          {{ title }}
+        </div>
+      </div>
+      <div class="card-body">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

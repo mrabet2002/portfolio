@@ -30,7 +30,7 @@
           <ng-container *ngFor="let item of menuItems">
             <li class="menu-item"
                 [ngClass]="{'active':item.active}"
-                (click)="selectMenuItem(item)" (click)="scrollToElement(item.link); toggleMenu();">
+                (click)="selectMenuItem(item)">
               <a class="link">{{item.value}}</a>
             </li>
           </ng-container>
